@@ -36,7 +36,6 @@ for i,v1 in pairs(AllowedInstances) do
 end
 WriteScript("local InstanceTable = {}")
 for i1,v1 in pairs(CleanInstances) do 
-	print(tostring(v1))
 	WriteScript("spawn(function()")
 	local sendTo = ""
 	local needed = true
