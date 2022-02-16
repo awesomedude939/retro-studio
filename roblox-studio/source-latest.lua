@@ -38,9 +38,6 @@ WriteScript("local InstanceTable = {}")
 for i1,v1 in pairs(CleanInstances) do 
 	local sendTo = ""
 	local needed = true
-	sendTo = sendTo.."local InstanceV"
-	sendTo = sendTo..tostring(i1)
-	sendTo = sendTo.." = "
 	sendTo = sendTo.."RESTRO.Create("
 	sendTo = sendTo..getdatatype("string", v1.ClassName)
 	sendTo = sendTo..", "
@@ -62,8 +59,7 @@ for i1,v1 in pairs(CleanInstances) do
 		end 	
 	end
 	sendTo = sendTo..")"
-	WriteScript(tostring(sendTo))
-	WriteScript("table.insert(InstanceTable, ".."InstanceV"..i1..")")
+	WriteScript("table.insert(InstanceTable, "..sendTo..")")
 
 	local prop = Properties[v1.ClassName]
 	for i2,v2 in pairs(prop) do
